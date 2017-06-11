@@ -22,7 +22,7 @@ public class infosJeu extends JPanel {
      
 	  public infosJeu() {
 		  
-		  this.setLayout(new GridLayout(1,4));
+		 this.setLayout(new GridLayout(1,4));
 			
 
 	    Dimension ecran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -36,7 +36,7 @@ public class infosJeu extends JPanel {
 		
 		this.niveau.setText("niveau 1");
 		
-		this.setBackground(new Color(0, 0, 255));
+		this.setBackground(new Color(100, 255, 255));
 		
 
 		

@@ -39,7 +39,6 @@ public class Oonde extends JLabel implements java.io.Serializable{
 	    	img  = new ImageIcon("./resources/onde.png");
 	    	img2  = new ImageIcon("./resources/onde0.png");
 	    	img3  = new ImageIcon("./resources/onde1.png");
-
 	        setIcon(img);
 	        setLocation(posX,posY);
 	        this.setSize(this.getPreferredSize());
@@ -53,5 +52,8 @@ public class Oonde extends JLabel implements java.io.Serializable{
 			  setIcon(img2);
 		  else if (a==3)
 			  setIcon(img3);
-	  }
+		
+		  }
+		
+	  
 }

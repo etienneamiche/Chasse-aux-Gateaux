@@ -10,6 +10,7 @@ public class GateauArrayList extends ArrayList<Gateau> implements java.io.Serial
 	        	Gateau g = new Gateau(m);
 	        	if((int)(Math.random()*100)>66)
 	        		g.setIcon(2);
+	        	else g.setIcon(1);
 	            add(g);
 	        }
 

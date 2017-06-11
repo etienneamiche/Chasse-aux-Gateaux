@@ -43,16 +43,16 @@ public class Move {
 
         switch(i){
             case 1:
-                posY-=5;
+                posY-=12;
                 break;
             case 2:
-                posY+=5;
+                posY+=12;
                 break;
             case 3:
-                posX-=5;
+                posX-=12;
                 break;
             case 4:
-                posX+=5;
+                posX+=12;
                 break;
             case 5:
             	JPanel BM = (JPanel)map.getParent().getComponent(0);

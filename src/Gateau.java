@@ -40,7 +40,7 @@ public class Gateau extends JLabel implements java.io.Serializable {
 	    	setIcon(img);
 	    	this.type = 1;
     	}
-    	else if(a==2)
+    	if(a==2)
     	{	
     		setIcon(img2); 	
     		this.type = 2;

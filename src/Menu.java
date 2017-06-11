@@ -78,7 +78,7 @@ public class Menu
     	  Desktop desktop = null; 
     	  java.net.URI url; 
     	  try { 
-    	  url = new java.net.URI("http://blabla/blabal/blaba.html"); 
+    	  url =  new java.net.URI("https://github.com/etienneamiche/Chasse-aux-Gateaux"); 
     	  if (Desktop.isDesktopSupported()) 
     	  { 
     	  desktop = Desktop.getDesktop(); 
