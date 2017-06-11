@@ -56,7 +56,7 @@ public class Move {
                 break;
             case 5:
             	JPanel BM = (JPanel)map.getParent().getComponent(0);
-        		JLabel en = (JLabel)BM.getComponent(0);
+        		JLabel energie = (JLabel)BM.getComponent(0);
         		JLabel mana = (JLabel)BM.getComponent(1);
 	
         		if (p.getMana() < 12) {
@@ -71,7 +71,7 @@ public class Move {
                     au.setFic("katon");
                     au.start();
 
-	        		en.setText("energie : "+p.getEnergy());
+	        		energie.setText("energie : "+p.getEnergy());
 	        		p.setMana(p.getMana() - 12);
 	        		mana.setText("mana : "+p.getMana());
 	        		
@@ -86,9 +86,9 @@ public class Move {
             case 6:
             	System.out.println("touche P enfoncÃŠe");
             	BM = (JPanel)map.getParent().getComponent(0);
-        		en = (JLabel)BM.getComponent(0);
+        		energie = (JLabel)BM.getComponent(0);
         		mana = (JLabel)BM.getComponent(1);
-        		en.setText("PAUSE");
+        		energie.setText("PAUSE");
         		mana.setText("");
                 isPaused = !(isPaused);
             	//System.out.println("isPaused Move: "+isPaused);
@@ -110,11 +110,11 @@ public class Move {
 		        	}
 	        		
 	        		JPanel BM = (JPanel)map.getParent().getComponent(0);
-	        		JLabel en = (JLabel)BM.getComponent(0);
-	        		en.setText("energie : "+p.getEnergy());
+	        		JLabel energie = (JLabel)BM.getComponent(0);
+	        		energie.setText("energie : "+p.getEnergy());
 	
 	        		if (p.getEnergy()==1)
-	            		en.setText("energie : "+p.getEnergy()+"   /!\\ DEAD MAN WALKIN /!\\");
+	            		energie.setText("energie : "+p.getEnergy()+"   /!\\ DEAD MAN WALKIN /!\\");
 	            	return;
 	            }
 	            if (katon && intersects(n,ro)){
@@ -151,15 +151,15 @@ public class Move {
 	
 	        		// si on a mangÃŠ un gateau de vie
 	        		if (g.getGateau()==1){
-	            		JLabel en = (JLabel)BM.getComponent(0);
-		        		p.setEnergy(p.getEnergy() + 2);
+	            		JLabel energie = (JLabel)BM.getComponent(0);
+		        		p.setEnergy(p.getEnergy() + 3);
 		        		System.out.println("energie : "+p.getEnergy());
-		        		en.setText("energie : "+p.getEnergy());
+		        		energie.setText("energie : "+p.getEnergy());
 	        		}
 	        		// si on a mangÃŠ un gateau de mana
 	        		else if (g.getGateau()==2){
 	            		JLabel mana = (JLabel)BM.getComponent(1);
-		        		p.setMana(p.getMana() + 5);
+		        		p.setMana(p.getMana() + 10);
 		        		System.out.println("mana : "+p.getMana());
 		        		mana.setText("mana : "+p.getMana());
 	        		}

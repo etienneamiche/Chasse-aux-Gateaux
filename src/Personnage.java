@@ -31,9 +31,17 @@ public class Personnage extends JLabel implements java.io.Serializable {
     	return this.mana;
     }
     // TODO: 
-    public void setMana(int n){
-    	this.mana=n;
-    }
+    public void setMana(int n)
+    	  {
+    		    if (n >= 100) {
+    		      this.mana = 100;
+    		    } else if (n <= 0) {
+    		      this.mana = 0;
+    		    } else {
+    		      this.mana = n;
+    		    }
+    		  }
+    
     
     // TODO: 
     public int getEnergy(){
@@ -42,7 +50,13 @@ public class Personnage extends JLabel implements java.io.Serializable {
     
     // TODO:
     public void setEnergy(int n){
-    	this.energy=n;
+    	  if (n >= 10) {
+    	      this.energy = 10;
+    	    } else if (n <= 0) {
+    	      this.energy = 0;
+    	    } else {
+    	      this.energy = n;
+    	    }
     }
     // TODO: 
     public int getPosX() {
@@ -60,11 +74,12 @@ public class Personnage extends JLabel implements java.io.Serializable {
 
             DROITE = new ImageIcon("./resources/joueur_droite.png");
             GAUCHE = new ImageIcon("./resources/joueur_gauche.png");
-            BAS = new ImageIcon("./resources/joueur_bas.png");
-            HAUT = new ImageIcon("./resources/joueur_haut.png");
+            BAS    = new ImageIcon("./resources/joueur_bas.png");
+            HAUT   = new ImageIcon("./resources/joueur_haut.png");
             setIcon(BAS);
-            this.setSize(this.getPreferredSize());
             setLocation(getPosX(),getPosY());
+            this.setSize(this.getPreferredSize());
+            
             setVisible(true);
             
     }
@@ -98,8 +113,9 @@ public class Personnage extends JLabel implements java.io.Serializable {
       	else if(i==3)
     		setIcon(GAUCHE);
       	else setIcon(DROITE);
-        this.posX =nposx;
-        this.posY = nposy;
+        if(nposx<m.getWidth()-48 && nposx>0  ) this.posX =nposx;
+       
+        if(nposy > 1 && nposy <m.getHeight() -48) this.posY = nposy;
         
         setLocation(posX,posY);
     }

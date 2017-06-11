@@ -36,7 +36,7 @@ public class Main {
                 map.add(p);
                 
                 // ajout de la barre d'infos
-                //infosJeu bm = new infosJeu();
+                infosJeu bm = new infosJeu();
                 
                 // dÃ©marre le thread de mana (juste Ã  dÃ©commenter)
                 IncreaseMana im = new IncreaseMana(p, map);
@@ -60,24 +60,23 @@ public class Main {
                nuts.addToMap(map);
                nuts.run();
                u.setNutritionisteArrayList(nuts);                
-               u.setNutritionisteArrayList(null); // Ã  supprimer pour remplacer null par nuts                
+               //u.setNutritionisteArrayList(null); // Ã  supprimer pour remplacer null par nuts                
 
                 // dÃ©marre le thread des nutritionnistes
                 MoveNutritionisteArrayList mnal = new MoveNutritionisteArrayList(nuts,p,map,sgal);
                 mnal.start();
                 u.setMNAL(mnal);
-                u.setMNAL(null); // Ã  supprimer pour remplacer null par mnal
+                //u.setMNAL(mnal); // Ã  supprimer pour remplacer null par mnal
 
                 // TODO: la barre de menu en haut
-                //Menu menubar = new Menu(cakes, nuts, p, mnal, sgal, u,map, move);
+              Menu menubar = new Menu(cakes, nuts, p, mnal, sgal, u,map, move);
                 
                 
                 // affichage des elements dans la page
                 frame.setLayout(new BorderLayout());
-                
+             frame.setJMenuBar(menubar);
+                frame.add(bm, BorderLayout.SOUTH);
                 frame.add(map, BorderLayout.CENTER);
-                // frame.setJMenuBar(menubar);
-                //frame.add(bm, BorderLayout.SOUTH);
                 
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();

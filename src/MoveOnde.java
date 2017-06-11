@@ -19,7 +19,30 @@ public class MoveOnde extends Thread {
 	public void run(){
 		// TODO: dÃ©placement de l'onde sur la map en 3 images. Placer la premiere autour du personnage, 
 		// puis la seconde, puis la troisiÃ¨me, puis cela disparaÃ®t.
+		KATON.setLocation(onde.getPosX(),onde.getPosY());
+		onde.setIcon(1);
+		map.add(KATON);
+		map.add(onde);
+		map.validate();
+	
+		try {
+            Thread.sleep(100);
+          } catch (InterruptedException e){}
 		
+		onde.setIcon(2);
+		map.add(onde);
+		map.validate();
+		
+		try {
+            Thread.sleep(100);
+          } catch (InterruptedException e){}
+		
+		onde.setIcon(3);
+		map.add(onde);
+		map.validate();
+
+		map.remove(KATON);
+		map.remove(onde);
 		//KATON.setLocation(...,...);
 		//map.add(KATON);
 		// ....
