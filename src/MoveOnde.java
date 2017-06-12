@@ -29,7 +29,7 @@ public class MoveOnde extends Thread {
             Thread.sleep(100);
           } catch (InterruptedException e){}
 		
-		KATON.setLocation(onde.getPosX()+5,onde.getPosY()+5);
+		KATON.setLocation(onde.getPosX(),onde.getPosY());
 		onde.setIcon(2);
 		map.add(onde);
 		map.validate();
@@ -38,7 +38,7 @@ public class MoveOnde extends Thread {
             Thread.sleep(100);
           } catch (InterruptedException e){}
 		
-		KATON.setLocation(onde.getPosX()+10,onde.getPosY()+10);
+		KATON.setLocation(onde.getPosX(),onde.getPosY());
 		onde.setIcon(3);
 		map.add(onde);
 		map.validate();

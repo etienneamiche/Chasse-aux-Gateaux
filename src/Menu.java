@@ -118,7 +118,7 @@ public class Menu
     public void actionPerformed(ActionEvent e)
     {
       JOptionPane jop1 = new JOptionPane();
-      JOptionPane.showMessageDialog(null, "Structure de base du jeu par : Mr. Osmani \n Modifié par : Etienne Amiche", "A propos du jeu Chasse aux Gateaux", 1);
+      JOptionPane.showMessageDialog(null, "Structure de base du jeu : Mr. Osmani \n Modifié par : Etienne Amiche", "A propos du jeu Chasse aux Gateaux", 1);
     }
   }
 }

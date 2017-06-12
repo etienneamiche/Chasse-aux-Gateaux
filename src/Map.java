@@ -29,18 +29,16 @@ public class Map
     OCEAN, 
     PAVED_ROAD, 
     PLAINS };
-  public static final int NUM_ROWS = 50;
-  public static final int NUM_COLS = 50;
-  public static final int PREFERRED_GRID_SIZE_PIXELS = 10;
+  
   int indexTile = 0;
-  private Color[][] terrainGrid;
+ 
   private Dimension jframedim;
   
   public Map(Dimension d)
   {
     super(null);
     this.jframedim = d;
-    this.terrainGrid = new Color[50][50];
+
   }
   
   public void paintComponent(Graphics g)
@@ -51,22 +49,18 @@ public class Map
     
     Dimension ecran = Toolkit.getDefaultToolkit().getScreenSize();
     
-    int rectWidth = ecran.width / 50;
-    int rectHeight = ecran.height / 50;
+    int rectWidth = ecran.width; 
+    int rectHeight = ecran.height;
     if (this.indexTile > 9) {
-      this.indexTile = 0;
+    
+      
+    	 indexTile = 0;
     }
-    for (int i = 0; i < 50; i++) {
-      for (int j = 0; j < 50; j++)
-      {
-        int x = i * rectWidth;
-        int y = j * rectHeight;
-        
         Color terrainColor = TERRAIN[this.indexTile];
         
         g.setColor(terrainColor);
-        g.fillRect(x, y, rectWidth, rectHeight);
+        g.fillRect(0, 0, rectWidth, rectHeight);
       }
-    }
-  }
+    
+  
 }
